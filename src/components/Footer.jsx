@@ -2,8 +2,15 @@
 
 export default function Footer() {
   return (
-    <footer>
-      <p>&copy; 2023 Cryptocurrency Tracker</p>
+    <footer className="footer">
+
+        <div className="contenedor">
+            <h4>CryptoInvestment</h4>
+            <p>Tu fuente confiable para el seguimiento de criptomonedas</p>
+        </div>
+
+
+      <p className="derechos">&copy; 2025 CryptoInvestment</p>
     </footer>
   );
 }

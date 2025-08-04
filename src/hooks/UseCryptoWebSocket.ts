@@ -22,8 +22,8 @@ const useCryptoWebSocket = (criptoId: number) => {
     const eventName = `historial-update-${criptoId}`;
 
     socket.on(eventName, (data: { criptoId: number; nuevoRegistro: any }) => {
-      setHistorial(prev => [data.nuevoRegistro, ...prev]);
-    });
+      setHistorial(prev => [...prev, data.nuevoRegistro]);
+    }); 
 
     return () => {
       socket.off(eventName);

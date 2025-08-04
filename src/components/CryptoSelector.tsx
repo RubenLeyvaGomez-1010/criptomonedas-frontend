@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Chart as ChartJS, LineController, LineElement, PointElement, LinearScale, Title, CategoryScale } from 'chart.js';
 import useCryptoWebSocket from '../hooks/UseCryptoWebSocket';
 
-// Registra componentes necesarios
 ChartJS.register(LineController, LineElement, PointElement, LinearScale, Title, CategoryScale);
 
 const CryptoSelector = () => {
@@ -19,6 +18,7 @@ const CryptoSelector = () => {
       }
     };
   }, [selectedCryptoId]);
+
 
   useEffect(() => {
     if (loading || !canvasRef.current) return;
@@ -72,7 +72,14 @@ const CryptoSelector = () => {
     const cryptos = {
       1: 'Bitcoin (BTC)',
       2: 'Ethereum (ETH)',
-      6: 'Solana (SOL)'
+      3: 'XRP (XRP)',
+      4: 'Tether USDt (USDT)',
+      5: 'BNB (BNB)',
+      6: 'Solana (SOL)',
+      7: 'USDC (USDC)',
+      8: 'Dogecoin (DOGE)',
+      9: 'TRON (TRX)',
+      10: 'Cardano (ADA)'
     };
     return cryptos[id] || `Cripto ID: ${id}`;
   };
@@ -91,7 +98,14 @@ const CryptoSelector = () => {
         >
           <option value={1}>Bitcoin (BTC)</option>
           <option value={2}>Ethereum (ETH)</option>
+          <option value={4}>XRP (XRP)</option>
+          <option value={4}>Tether USDt (USDT)</option>
+          <option value={5}>BNB (BNB)</option>
           <option value={6}>Solana (SOL)</option>
+          <option value={7}>USDC (USDC)</option>
+          <option value={8}>Dogecoin (DOGE)</option>
+          <option value={9}>TRON (TRX)</option>
+          <option value={10}>Cardano (ADA)</option>
           
         </select>
       </div>
